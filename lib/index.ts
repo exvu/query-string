@@ -1,6 +1,2 @@
-import * as url from './url';
-import * as query from './query';
-
-export default {
-  url, query,
-}
+export { default as url } from './url';
+export { default as query } from './query';

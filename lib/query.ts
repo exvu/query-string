@@ -35,7 +35,7 @@ function stringifyParams(_data: { [key: string]: any }, prefix: string = '') {
  * 转换对象为字符串
  */
 
-export function stringify(obj: { [index: string]: any }) {
+function stringify(obj: { [index: string]: any }) {
   let data: Array<Array<any>> = stringifyParams(obj);
   return data.map(item => item.join('=')).join('&');
 }
@@ -44,7 +44,7 @@ export function stringify(obj: { [index: string]: any }) {
 /**
  * 将querystring转换为对象
  */
-export function parse(querystring: string) {
+function parse(querystring: string) {
   // key 正则匹配
   const reg = /^([a-zA-Z_][0-9a-zA-Z_]*)|(\[(?:[a-zA-Z_][0-9a-zA-Z_]*)?\])/ig;
   const _arr: { [index: string]: any } = {};
@@ -116,7 +116,7 @@ function objectToArray(obj: { [index: string]: any }) {
     }
     values.push(obj[item]);
   });
-  return flag ? values: obj;
+  return flag ? values : obj;
 }
 function deepObjMerge(obj1: { [index: string]: any }, obj2: { [index: string]: any }) {
   for (let key in obj2) {
@@ -134,4 +134,8 @@ function deepArrMerge(arr1: Array<any>, arr2: Array<any>) {
     arr1[key] = (arr1[key] && Object.prototype.toString.call(arr1[key]) === '[object Array]' && Object.prototype.toString.call(arr1[key]) == '[object Object]') ? deepArrMerge(arr1[key], arr2[key]) : arr2[key];
   }
   return arr1;
+}
+
+export default {
+  stringify, parse,
 }

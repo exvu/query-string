@@ -11,6 +11,7 @@
       "dom",
       "scripthost"
     ],
+    "declaration": true,
     "declarationDir": "@type/",
     "outDir": "./src/",
     "strict": true,
