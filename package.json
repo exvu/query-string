@@ -1,0 +1,44 @@
+{
+  "name": "@exvu/url-parse",
+  "version": "0.0.1",
+  "description": "url-parse",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "url",
+    "query-string",
+    "querystring",
+    "parse",
+    "stringfiy"
+  ],
+  "types": "@type/index.d.ts",
+  "scripts": {
+    "build:dist": "webpack",
+    "build:src": "tsc --target es5"
+  },
+  "author": {
+    "name": "exvu",
+    "email": "923100406@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exvu/url-parse.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exvu/url-parse/issues"
+  },
+  "homepage": "https://github.com/exvu/url-parse#readme",
+  "devDependencies": {
+    "@types/jsdom": "^11.0.6",
+    "babel": "^6.23.0",
+    "jsdom": "^11.12.0",
+    "json-format": "^1.0.1",
+    "ts-loader": "^4.4.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.5"
+  }
+}
