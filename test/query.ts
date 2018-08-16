@@ -1,4 +1,4 @@
-import { query, } from '../lib';
+import query from '../lib';
 
 
 let data = {

@@ -1,16 +1,17 @@
 // const webpack = require("webpack");
 const path = require("path");
-const { name, version } = require('./package');
+const { description, version } = require('./package');
 
 module.exports = {
+    mode: 'production',
     entry: path.join(__dirname, '/lib/index.ts'),
     output: {
         path: path.join(__dirname, '/dist/'),
-        filename: `${name}-${version}.js`,
+        filename: `${description}-${version}.js`,
         library: "UrlParse",
         libraryTarget: 'window',
         umdNamedDefine: true,
-        libraryExport:'default'
+        libraryExport: 'default'
     },
     externals: function () {
         let manifest = require('./package.json');
@@ -26,14 +27,14 @@ module.exports = {
         extensions: [".ts", ".js"]
     },
     module: {
-        loaders: [
-            { test: /\.ts?$/, loader: "ts-loader" },
-
+        rules: [
+            {
+                test: /\.ts?$/, loader: "ts-loader", options: {
+                    "declaration": false,
+                }
+            },
         ]
     },
     plugins: [
-        // new UglifyJSPlugin({
-         
-        // })
     ]
 }
